@@ -35,7 +35,7 @@ setNewTaskTitle('');
 
   function handleToggleTaskCompletion(id: number) {
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
-    const newTasks = tasks.map(task => task.id == id ? {
+    const newTasks = tasks.map(task => task.id === id ? {
       // pegamos a task antiga com ...
       ...task,
 
@@ -43,6 +43,8 @@ setNewTaskTitle('');
       isComplete: !task.isComplete
       // se o id for igual, so retorna a task da mesma forma.
     } : task);
+
+    setTasks(newTasks)
   }
 
   function handleRemoveTask(id: number) {
